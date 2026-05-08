@@ -3,9 +3,12 @@
 // confirmed; everything else is placeholder pending Adam's confirmation.
 
 // GitHub Pages subpath (e.g. "/chameleon-concrete"). Empty string in
-// dev. Next.js's Image component auto-prefixes, but plain <img> tags
-// in GalleryModal need to prepend this manually.
+// dev. Every image path in this file is run through `img()` so it has
+// the prefix baked in — required because `images.unoptimized: true`
+// (necessary for static hosting on GH Pages) skips the auto basePath
+// prefixing that Next.js Image normally does.
 export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+const img = (path: string) => `${BASE_PATH}${path}`;
 
 export const BRAND = {
   name: 'Chameleon Concrete Projects',
@@ -79,16 +82,16 @@ export const FEATURED_PROJECT_IDS: readonly number[] = [1, 3, 4, 8, 6];
 export const PROJECTS: Project[] = [
   { id: 1, span: 12, aspect: '21/9',
     title: 'Outdoor Living, Lit', tag: 'Patio · Fire · Stump Oven', loc: 'Franklin, MA',
-    image: '/images/chameleon_concrete_38.jpg',
+    image: img('/images/chameleon_concrete_38.jpg'),
     alt: 'Sweeping carved-concrete patio at night with fire pit, stump pizza oven and string lights' },
 
   { id: 2, span: 8, aspect: '4/3',
     title: 'Wood-Grain Walkway', tag: 'Stamped · Trompe l’œil', loc: 'New England',
-    image: '/images/chameleon_concrete_24.jpg',
+    image: img('/images/chameleon_concrete_24.jpg'),
     alt: 'Stamped concrete walkway carved and tinted to look exactly like aged wood planks' },
   { id: 3, span: 4, aspect: '3/4',
     title: 'Stump Chair', tag: 'Sculpture · End-Grain Seat', loc: 'Studio Piece',
-    image: '/images/chameleon_concrete_43.jpg',
+    image: img('/images/chameleon_concrete_43.jpg'),
     alt: 'Concrete chair sculpted to look like a carved tree stump with end-grain seat' },
 
   // span/aspect tuned to align with the col-4 portrait row in the
@@ -96,59 +99,59 @@ export const PROJECTS: Project[] = [
   // share the same height).
   { id: 4, span: 4, aspect: '3/4',
     title: 'The Signature Firepit', tag: 'Carved Stump · Stone Bowl', loc: 'Massachusetts',
-    image: '/images/chameleon_concrete_30.jpg',
+    image: img('/images/chameleon_concrete_30.jpg'),
     alt: 'Carved concrete fire pit at twilight with stump-style pizza oven behind' },
   { id: 5, span: 8, aspect: '4/3',
     title: 'Tree-Stump Table', tag: 'Bark Texture · Inset Detail', loc: 'Franklin, MA',
-    image: '/images/chameleon_concrete_45.jpg',
+    image: img('/images/chameleon_concrete_45.jpg'),
     alt: 'Massive concrete tree-stump base with carved bark texture and inlaid detail' },
 
   { id: 6, span: 12, aspect: '16/9',
     title: 'Compass Medallion Patio', tag: 'Stamped · Custom Inlay · Fire Pit', loc: 'Franklin area',
-    image: '/images/chameleon_concrete_07.jpg',
+    image: img('/images/chameleon_concrete_07.jpg'),
     alt: 'Multi-color stamped concrete patio with hand-inlaid compass medallion and circular fire pit' },
 
   { id: 7, span: 7, aspect: '5/4',
     title: 'Concrete Pool & Deck', tag: 'Pool Environment', loc: 'New England',
-    image: '/images/chameleon_concrete_02.jpg',
+    image: img('/images/chameleon_concrete_02.jpg'),
     alt: 'Inground pool with stamped concrete pool deck and white privacy fencing' },
   // span/aspect tuned to align with the col-4 portrait row in the
   // featured grid (was span 5 / 4-5 — moved to span 4 / 3-4).
   { id: 8, span: 4, aspect: '3/4',
     title: 'Cliff Waterfall Grotto', tag: 'Sculpted Concrete · Night Lit · Water', loc: 'Franklin, MA',
-    image: '/images/chameleon_concrete_41.jpg',
+    image: img('/images/chameleon_concrete_41.jpg'),
     alt: 'Carved-concrete cliff face at night with water cascading into a stump-shaped basin' },
 
   { id: 9, span: 5, aspect: '4/5',
     title: 'Carved Accent Wall', tag: 'Artisan Wall · Raking Light', loc: 'New England',
-    image: '/images/chameleon_concrete_34.jpg',
+    image: img('/images/chameleon_concrete_34.jpg'),
     alt: 'Hand-carved decorative concrete accent post with deep texture' },
   { id: 10, span: 7, aspect: '5/4',
     title: 'Two-Tone Patio', tag: 'Stamped · Tonal Inlay', loc: 'New England',
-    image: '/images/chameleon_concrete_17.jpg',
+    image: img('/images/chameleon_concrete_17.jpg'),
     alt: 'Wide stamped concrete patio in dual tones with raised seating ledge' },
 
   { id: 11, span: 8, aspect: '4/3',
     title: 'Carved Stone Cap', tag: 'Sculpted Wall · Granite Look', loc: 'Massachusetts',
-    image: '/images/chameleon_concrete_33.jpg',
+    image: img('/images/chameleon_concrete_33.jpg'),
     alt: 'Concrete retaining wall with hand-carved face that reads as quarried granite' },
   { id: 12, span: 4, aspect: '3/4',
     title: 'Under-Deck Pad', tag: 'Slate · Tight Footprint', loc: 'New England',
-    image: '/images/chameleon_concrete_13.jpg',
+    image: img('/images/chameleon_concrete_13.jpg'),
     alt: 'Stamped slate concrete pad set under an existing wood deck' },
 
   { id: 13, span: 4, aspect: '3/4',
     title: 'Threading Path', tag: 'Stamped Walkway', loc: 'Franklin area',
-    image: '/images/chameleon_concrete_09.jpg',
+    image: img('/images/chameleon_concrete_09.jpg'),
     alt: 'Multi-tone stamped concrete walkway threading between lawn panels' },
   { id: 14, span: 8, aspect: '4/3',
     title: 'Raised Stamped Deck', tag: 'Slate · Outdoor Kitchen', loc: 'Massachusetts',
-    image: '/images/chameleon_concrete_20.jpg',
+    image: img('/images/chameleon_concrete_20.jpg'),
     alt: 'Raised stamped concrete deck along a contemporary home with outdoor kitchen' },
 
   { id: 15, span: 12, aspect: '21/9',
     title: 'Black-&-White Dance Floor', tag: 'Custom Patio · Statement Piece', loc: 'Franklin, MA',
-    image: '/images/chameleon_concrete_44.jpg',
+    image: img('/images/chameleon_concrete_44.jpg'),
     alt: 'Black and white checkerboard concrete patio with hot tub and string lights overhead' },
 ];
 
@@ -192,7 +195,11 @@ const _projectByImage = new Map(PROJECTS.map((p) => [p.image, p]));
 export type GalleryItem = { src: string; alt: string };
 
 export const GALLERY: GalleryItem[] = _galleryOrder.map((n) => {
-  const src = `/images/chameleon_concrete_${String(n).padStart(2, '0')}.jpg`;
+  // `img()` applies the BASE_PATH prefix so plain <img> tags in
+  // GalleryModal can use `item.src` directly without re-prefixing
+  // (and so the lookup against _projectByImage matches — the Map's
+  // keys are the already-prefixed PROJECTS image paths).
+  const src = img(`/images/chameleon_concrete_${String(n).padStart(2, '0')}.jpg`);
   const proj = _projectByImage.get(src);
   return {
     src,
@@ -226,7 +233,7 @@ export const OWNER = {
   headline: 'Adam & crew. Concrete as a craft.',
   quote: 'We build concrete that feels natural, permanent, and completely custom to the space.',
   bio: 'Chameleon Concrete Projects is led by Adam Samarco out of Franklin, Massachusetts. Adam is known by clients for creativity, deep concrete knowledge, and an eye for blending new carved work into existing decking and landscape — so what we add looks like it was always there. Every project is run by Adam and the same crew, start to finish.',
-  portrait: '/images/chameleon_concrete_31.jpg',
+  portrait: img('/images/chameleon_concrete_31.jpg'),
   portraitAlt: 'Adam Samarco, owner of Chameleon Concrete Projects, on site',
 };
 
@@ -283,7 +290,7 @@ export const MARQUEE = [
 ];
 
 export const HERO_IMAGE = {
-  src: '/images/chameleon_concrete_42.jpg',
+  src: img('/images/chameleon_concrete_42.jpg'),
   alt: 'Carved concrete fire pit and tree-stump pizza oven at twilight, Adam Samarco signature project',
 };
 
@@ -292,17 +299,17 @@ export const HERO_IMAGE = {
 // patio with curved edge. Adam supplied these as a matched set.
 export const BA_IMAGES = {
   before: {
-    src: '/images/chameleon_concrete_16.jpg',
+    src: img('/images/chameleon_concrete_16.jpg'),
     alt: 'Cracked concrete pad and bare gravel behind the homeowner’s French doors before work began',
   },
   after: {
-    src: '/images/chameleon_concrete_15.jpg',
+    src: img('/images/chameleon_concrete_15.jpg'),
     alt: 'Finished stamped-concrete patio with curved leading edge in the same spot after eleven weeks',
   },
   caption: 'Backyard transformation · New England · Same footprint, eleven weeks',
 };
 
 export const CTA_IMAGE = {
-  src: '/images/chameleon_concrete_39.jpg',
+  src: img('/images/chameleon_concrete_39.jpg'),
   alt: 'Moody night waterfall — custom carved concrete grotto detail',
 };

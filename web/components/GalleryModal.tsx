@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { GALLERY, BASE_PATH } from '@/lib/content';
+import { GALLERY } from '@/lib/content';
 
 type Props = {
   open: boolean;
@@ -156,7 +156,7 @@ export function GalleryModal({ open, onClose }: Props) {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={`${BASE_PATH}${item.src}`}
+                src={item.src}
                 alt={item.alt}
                 loading="lazy"
                 decoding="async"
@@ -189,7 +189,7 @@ export function GalleryModal({ open, onClose }: Props) {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={`${BASE_PATH}${lightboxItem.src}`}
+              src={lightboxItem.src}
               alt={lightboxItem.alt}
               decoding="async"
             />
