@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chameleon Concrete Projects · Custom Carved &amp; Decorative Concrete</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..600,30..100,0..1;1,9..144,300..600,30..100,0..1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+<script src="image-slot.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="sections-top.jsx"></script>
+<script type="text/babel" src="sections-mid.jsx"></script>
+<script type="text/babel" src="sections-bot.jsx"></script>
+
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "palette": "charcoal",
+  "headlineIdx": 0,
+  "ctaPrimary": "Request a Custom Quote",
+  "ctaSecondary": "View the Work",
+  "navCta": "Begin a Project"
+}/*EDITMODE-END*/;
+
+const HEADLINES = [
+  "Concrete<br/>carved into <em>art.</em>",
+  "Custom carved concrete<br/><em>for the way you live outside.</em>",
+  "Water features, grottos,<br/>pools &amp; <em>carved walls.</em>",
+  "Designed by Adam.<br/>Carved <em>by hand.</em>",
+  "Bring your vision<br/>to <em>permanent form.</em>"
+];
+
+const TRUST = [
+  { num: "5.0<em>★</em>", label: "Google · 18 Reviews" },
+  { num: "Free<em>.</em>", label: "No-Obligation Estimates" },
+  { num: "Franklin<br/><em>MA</em>", label: "& Surrounding New England" },
+  { num: "Adam<br/><em>& Crew</em>", label: "One Team, Start to Finish" }
+];
+
+// Project names + locations are placeholders — confirm with Adam.
+const PROJECTS = [
+  { id: 1, title: "Backyard Water Feature", tag: "Sculpted Concrete · Water", loc: "Franklin, MA",
+    slot: "01 · signature water feature", size: "col-7" },
+  { id: 2, title: "Carved Accent Wall", tag: "Artisan Wall · Texture", loc: "Confirm w/ owner",
+    slot: "02 · accent wall detail, raking light", size: "col-5" },
+  { id: 3, title: "Custom Grotto", tag: "Grotto · Stonework", loc: "Confirm w/ owner",
+    slot: "03 · grotto interior, water in motion", size: "col-5" },
+  { id: 4, title: "Pool & Pool Deck", tag: "Pool Environment", loc: "Confirm w/ owner",
+    slot: "04 · pool from above", size: "col-7" },
+  { id: 5, title: "Patio & Outdoor Living", tag: "Patio · Stamped Concrete", loc: "Franklin area",
+    slot: "05 · patio with fire pit / stump oven", size: "col-12" }
+];
+
+const SERVICES = [
+  { title: "Water Features & Grottos",
+    body: "Sculpted concrete water features and custom grottos — carved on site to look natural, permanent, and built into the land." },
+  { title: "Pools & Pool Decks",
+    body: "Custom-designed concrete pools and pool decking — including blending new work seamlessly with existing decking and surrounds." },
+  { title: "Carved & Retaining Walls",
+    body: "Artisan-carved accent walls, decorative walls, and structural retaining walls — sculpted into the landscape rather than placed on top of it." },
+  { title: "Patios & Outdoor Living",
+    body: "Concrete patios, walkways and outdoor living features — including stamped and decorative finishes, fire pits and the signature carved tree-stump pizza oven." }
+];
+
+// Process is a proposed structure — Adam to confirm exact phases and naming.
+const PROCESS = [
+  { title: "Site Walk",
+    body: "Adam visits the property to study the space, drainage, existing materials and what you're trying to build. No pressure, no slides." },
+  { title: "Concept & Estimate",
+    body: "Concept sketch, materials direction and a free, no-obligation estimate. Scope and timeline locked before any work begins." },
+  { title: "Form, Pour & Carve",
+    body: "Prep, forming, pour and the signature hand-carving phase — texture, stone faces and detail sculpted directly into the wet concrete." },
+  { title: "Color & Finish",
+    body: "Coloring, sealing and final walkthrough. The finished feature blends with existing decking, plantings and surrounds." }
+];
+
+// Owner copy: bio specifics (founding year, crew size, background) need
+// confirmation with Adam. Quote is a placeholder pulled from his positioning.
+const OWNER = {
+  headline: "Adam & crew. Concrete as a craft.",
+  quote: "We build concrete that feels natural, permanent, and completely custom to the space.",
+  bio: "Chameleon Concrete Projects is led by Adam Samarco out of Franklin, Massachusetts. Adam is known by clients for creativity, deep concrete knowledge, and an eye for blending new carved work into existing decking and landscape — so what we add looks like it was always there. Every project is run by Adam and the same crew, start to finish.",
+  name: "Adam Samarco",
+  role: "Owner · Lead Carver"
+};
+
+// From public Google reviews — get written permission before publishing names.
+const TESTIMONIALS = [
+  { quote: "Adam and crew did an amazing job with our patio. Creative, professional, and the finished work blended perfectly with what was already there.",
+    name: "Google Review", loc: "Franklin area", project: "Patio" },
+  { quote: "Very creative and the job was done perfectly. We will absolutely use Chameleon again for the next phase of our yard.",
+    name: "Google Review", loc: "New England", project: "Outdoor Project" },
+  { quote: "5.0 stars across 18 Google reviews — clients consistently mention creativity, concrete knowledge, professionalism and the way new work blends into older decking.",
+    name: "Verified · Google", loc: "Aggregate", project: "Across projects" }
+];
+
+const MARQUEE = ["Pools", "Waterfalls", "Grottos", "Carved Walls", "Outdoor Rooms", "Fireplaces", "Sculpted Stone", "By Hand"];
+
+function App() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  useReveal();
+
+  React.useEffect(() => {
+    document.documentElement.dataset.palette = t.palette || "charcoal";
+  }, [t.palette]);
+
+  const headline = HEADLINES[t.headlineIdx % HEADLINES.length];
+
+  return (
+    <React.Fragment>
+      <Nav ctaCopy={t.navCta} />
+      <main>
+        <Hero
+          headline={headline}
+          ctaPrimary={t.ctaPrimary}
+          ctaSecondary={t.ctaSecondary}
+        />
+        <TrustStrip items={TRUST} />
+        <FeaturedWork projects={PROJECTS} />
+        <Marquee words={MARQUEE} />
+        <Services items={SERVICES} />
+        <BeforeAfter />
+        <OwnerStory owner={OWNER} />
+        <Process steps={PROCESS} />
+        <Testimonials items={TESTIMONIALS} />
+        <FinalCTA ctaPrimary={t.ctaPrimary} ctaSecondary="Call the Studio" />
+      </main>
+      <Footer />
+      <StickyCTA ctaCopy={t.ctaPrimary} />
+
+      <TweaksPanel title="Tweaks">
+        <TweakSection label="Palette" />
+        <TweakRadio
+          label="Mood"
+          value={t.palette}
+          options={[
+            { value: "charcoal", label: "Charcoal" },
+            { value: "sand", label: "Sand" },
+            { value: "warm", label: "Warm" }
+          ]}
+          onChange={(v) => setTweak("palette", v)}
+        />
+
+        <TweakSection label="Headline" />
+        <TweakSelect
+          label="Hero copy"
+          value={t.headlineIdx}
+          options={HEADLINES.map((h, i) => ({
+            value: i,
+            label: h.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").slice(0, 38) + (h.length > 38 ? "…" : "")
+          }))}
+          onChange={(v) => setTweak("headlineIdx", Number(v))}
+        />
+
+        <TweakSection label="CTA Copy" />
+        <TweakText
+          label="Primary"
+          value={t.ctaPrimary}
+          onChange={(v) => setTweak("ctaPrimary", v)}
+        />
+        <TweakText
+          label="Secondary"
+          value={t.ctaSecondary}
+          onChange={(v) => setTweak("ctaSecondary", v)}
+        />
+        <TweakText
+          label="Nav CTA"
+          value={t.navCta}
+          onChange={(v) => setTweak("navCta", v)}
+        />
+      </TweaksPanel>
+    </React.Fragment>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+
+</body>
+</html>

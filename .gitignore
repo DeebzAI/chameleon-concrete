@@ -1,0 +1,32 @@
+# Dependencies
+**/node_modules/
+
+# Next.js build output
+web/.next/
+web/out/
+
+# TypeScript build artifacts
+web/*.tsbuildinfo
+web/next-env.d.ts
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env (don't commit secrets)
+.env
+.env.local
+.env.*.local
+
+# Vercel artifacts (we're not on Vercel here, but harmless to ignore)
+.vercel
