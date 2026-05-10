@@ -33,11 +33,15 @@ export const HEADLINE_HTML =
 // HEADLINE_HTML. If you want to A/B-test or rotate, add a HEADLINES
 // array here and accept it as a Hero prop.)
 
+// Trust strip: 4 cells (CSS grid is `repeat(4, 1fr)` — adding a 5th
+// would break the layout). Aug 2025: replaced the "Adam & Crew" badge
+// with the BusinessRate "Best of 2025 — Concrete Contractor · Franklin
+// MA" award. Adam-and-crew message still lives in OwnerStory and Footer.
 export const TRUST = [
   { num: '5.0<em>★</em>',           label: 'Google · 18 Reviews' },
   { num: 'Free<em>.</em>',          label: 'No-Obligation Estimates' },
   { num: 'Franklin<br/><em>MA</em>',label: '& Surrounding New England' },
-  { num: 'Adam<br/><em>& Crew</em>',label: 'One Team, Start to Finish' },
+  { num: 'Best of<br/><em>2025</em>', label: 'BusinessRate · Concrete Contractor' },
 ];
 
 // Project image filenames map to /public/images/.
@@ -64,11 +68,20 @@ export type Project = {
  * Everything else lives only in the full-gallery modal.
  *
  * Layout intent (5 cards, three rows):
- *   Row 1 — col-12 wide opener (38, atmospheric night patio)
- *   Row 2 — three col-4 portraits (chair, firepit, waterfall)
- *   Row 3 — col-12 wide closer (07, compass medallion)
+ *   Row 1 — col-12 wide opener (id 1 / image 38, atmospheric night patio)
+ *   Row 2 — three col-4 portraits, tight → atmospheric → atmospheric:
+ *     • id 20 / image 51 — compass medallion w/ teal lettering (craft detail)
+ *     • id 8  / image 41 — cliff waterfall grotto (kept from prior set)
+ *     • id 18 / image 49 — stamped steps through woods (atmospheric scene)
+ *   Row 3 — col-12 wide closer (id 16 / image 47 — drone over copper
+ *           medallion floor)
+ *
+ * May 2026 reshuffle: prior portraits id 3 (stump chair) and id 4
+ * (signature firepit) were moved off the homepage at Adam's request —
+ * they remain in the full gallery. Prior closer id 6 (compass medallion
+ * patio) likewise still lives in the gallery only.
  */
-export const FEATURED_PROJECT_IDS: readonly number[] = [1, 3, 4, 8, 6];
+export const FEATURED_PROJECT_IDS: readonly number[] = [1, 20, 8, 18, 16];
 
 // PROJECTS holds full metadata (title, tag, location) for any project
 // that needs richer presentation. Items render in array order wherever
@@ -153,6 +166,59 @@ export const PROJECTS: Project[] = [
     title: 'Black-&-White Dance Floor', tag: 'Custom Patio · Statement Piece', loc: 'Franklin, MA',
     image: img('/images/chameleon_concrete_44.jpg'),
     alt: 'Black and white checkerboard concrete patio with hot tub and string lights overhead' },
+
+  // ── May 2026 photo drop (ids 16–24) ───────────────────────────────
+  // New project shots from Adam. Item 16 is promoted into the homepage
+  // featured grid as the new closer; the rest appear in the full
+  // gallery only (added to _galleryOrder below).
+
+  { id: 16, span: 12, aspect: '21/9',
+    title: 'Aerial · Compass Medallion Floor', tag: 'Stamped · Inlaid Compass · Drone', loc: 'New England',
+    image: img('/images/chameleon_concrete_47.jpg'),
+    alt: 'Drone view of a craftsman standing on a copper-toned stamped concrete floor with a hand-inlaid compass medallion' },
+
+  { id: 17, span: 12, aspect: '21/9',
+    title: 'Checkered Patio in Progress', tag: 'Stamped · Tonal Diamond Pattern · Drone', loc: 'Massachusetts',
+    image: img('/images/chameleon_concrete_48.jpg'),
+    alt: 'Drone shot of a large two-tone diamond-pattern stamped concrete patio mid-installation' },
+
+  // span/aspect tuned to align with the col-4 portrait row in the
+  // featured grid (3:4 portrait, same height as siblings 20 + 8). The
+  // source photo is portrait-orientation so the crop sits naturally.
+  { id: 18, span: 4, aspect: '3/4',
+    title: 'Stamped Steps to the House', tag: 'Stamped · Carved Edges · Hand Rail', loc: 'New England',
+    image: img('/images/chameleon_concrete_49.jpg'),
+    alt: 'Stamped grey concrete steps and walkway curving up through woods to a modern home' },
+
+  { id: 19, span: 8, aspect: '4/3',
+    title: 'Wood-Plank & Medallion Floor', tag: 'Interior · Stamped · Inlaid Medallion', loc: 'New England',
+    image: img('/images/chameleon_concrete_50.jpg'),
+    alt: 'Dark interior stamped concrete floor with wood-plank inlay and a circular hand-carved medallion' },
+
+  { id: 20, span: 4, aspect: '3/4',
+    title: 'Cardinal Compass Medallion', tag: 'Stamped · Hand-Inlaid Detail', loc: 'Franklin area',
+    image: img('/images/chameleon_concrete_51.jpg'),
+    alt: 'Stamped concrete compass medallion with teal cardinal-direction lettering and a sculpted compass rose' },
+
+  { id: 21, span: 8, aspect: '4/3',
+    title: 'A-Frame Approach', tag: 'Stamped Walkway · Carved Steps · Site Build', loc: 'New England',
+    image: img('/images/chameleon_concrete_52.jpg'),
+    alt: 'A-frame house with custom stamped concrete walkway and carved steps blending into the site' },
+
+  { id: 22, span: 4, aspect: '3/4',
+    title: 'A-Frame Patio Detail', tag: 'Stamped Patio · Site Integration', loc: 'New England',
+    image: img('/images/chameleon_concrete_53.jpg'),
+    alt: 'Stamped concrete patio at the entry of a modern A-frame home blending into existing rock outcrops' },
+
+  { id: 23, span: 7, aspect: '5/4',
+    title: 'Wood-Plank Side Walkway', tag: 'Stamped · Trompe l’œil Plank', loc: 'Massachusetts',
+    image: img('/images/chameleon_concrete_54.jpg'),
+    alt: 'Wood-plank-stamped grey concrete walkway curving along the side of a residential home' },
+
+  { id: 24, span: 5, aspect: '4/5',
+    title: 'Copper Stamped Edge', tag: 'Stamped Detail · Plank Border', loc: 'New England',
+    image: img('/images/chameleon_concrete_55.jpg'),
+    alt: 'Close-up of a copper-toned stamped concrete slab with a wood-plank border at its corner' },
 ];
 
 // ── Full Gallery ─────────────────────────────────────────────────
@@ -181,11 +247,19 @@ export const PROJECTS: Project[] = [
 const _galleryOrder: number[] = [
   // Tier 1 — signature + cinematic. What makes Chameleon look like
   // sculpture instead of concrete work.
-  38, 41, 40, 30, 43, 44, 4, 7, 45, 24, 33, 34,
-  // Tier 2 — strong finished work, varied finishes & textures.
-  35, 36, 21, 17, 18, 2, 22, 14, 12, 13, 25, 26,
-  // Tier 3 — competent finished work; less editorial pop.
-  6, 8, 9, 19, 23,
+  // 47 leads — same drone-medallion shot now featured on the homepage,
+  // and it sets the tone for everything that follows. 50 (wood-plank
+  // interior + medallion) and 49 (carved steps through the woods) are
+  // new high-impact shots from the May 2026 drop.
+  47, 38, 41, 50, 40, 30, 43, 44, 4, 49, 7, 45, 24, 33, 34,
+  // Tier 2 — strong finished work, varied finishes & textures. 48
+  // (drone, checkered patio mid-install) and 51 (compass medallion
+  // with teal letters) slot in here; 52 + 53 are the A-frame still
+  // pair that complement the OwnerStory walkthrough video.
+  48, 51, 52, 35, 36, 21, 17, 18, 2, 53, 22, 14, 12, 13, 25, 26,
+  // Tier 3 — competent finished work; less editorial pop. 54
+  // (wood-plank side walkway) and 55 (copper edge detail) live here.
+  6, 8, 9, 19, 23, 54, 55,
   // Tier 4 — process / in-progress shots; show craft but quieter.
   28, 1, 10, 3,
 ];
@@ -207,6 +281,12 @@ export const GALLERY: GalleryItem[] = _galleryOrder.map((n) => {
   };
 });
 
+// SERVICES grid is rendered by Services.tsx as a flexible CSS grid,
+// so the count can grow without touching layout. Item 5 (carved
+// railings) was added in the May 2026 drop after the A-frame
+// walkthrough video revealed Adam's log-look railing posts are
+// concrete, not wood — a major differentiator that wasn't called out
+// previously.
 export const SERVICES = [
   { title: 'Water Features & Grottos',
     body: 'Sculpted concrete water features and custom grottos — carved on site to look natural, permanent, and built into the land.' },
@@ -216,6 +296,8 @@ export const SERVICES = [
     body: 'Artisan-carved accent walls, decorative walls, and structural retaining walls — sculpted into the landscape rather than placed on top of it.' },
   { title: 'Patios & Outdoor Living',
     body: 'Concrete patios, walkways and outdoor living features — including stamped and decorative finishes, fire pits and the signature carved tree-stump pizza oven.' },
+  { title: 'Carved Posts & Railings',
+    body: 'Concrete carved to the texture and presence of weathered logs and tree branches — railings, balusters and site posts that read as found objects, not installed product.' },
 ];
 
 export const PROCESS = [
@@ -312,4 +394,33 @@ export const BA_IMAGES = {
 export const CTA_IMAGE = {
   src: img('/images/chameleon_concrete_39.jpg'),
   alt: 'Moody night waterfall — custom carved concrete grotto detail',
+};
+
+// ── Award (May 2026) ─────────────────────────────────────────────
+// "Best of BusinessRate 2025 — Concrete Contractor, Franklin MA"
+// plaque from the August 2025 Google review aggregation. Displayed in
+// a standalone Award strip between Testimonials and FinalCTA, and
+// referenced in TrustStrip + Footer.
+export const AWARD = {
+  src: img('/images/award_businessrate_2025.png'),
+  alt: 'Best of BusinessRate 2025 — Concrete Contractor, Franklin Massachusetts plaque awarded to Chameleon Concrete Projects',
+  eyebrow: 'Recognition',
+  headline: 'Voted Best of <em>2025.</em>',
+  body:
+    'Named the 2025 Concrete Contractor of the year for Franklin, Massachusetts by BusinessRate, based on aggregated Google reviews from August 2025.',
+};
+
+// ── A-frame walkthrough video ────────────────────────────────────
+// 28-second silent walkthrough of a finished A-frame project showing
+// stamped concrete walkway, carved steps, and the carved-concrete
+// "log" railings that look like real branches. Plays muted/looped in
+// the OwnerStory portrait slot — used to be a placeholder per the
+// pre-existing TODO. Audio is intentionally muted (required for
+// autoplay; ambient context, not narration).
+export const STUDIO_VIDEO = {
+  src: img('/images/aframe_walkthrough.mp4'),
+  // Poster falls back to a still from the same project so a poster is
+  // visible before the video buffers and on reduced-data clients.
+  poster: img('/images/chameleon_concrete_52.jpg'),
+  caption: 'On site · A-frame project · carved concrete steps & railings',
 };

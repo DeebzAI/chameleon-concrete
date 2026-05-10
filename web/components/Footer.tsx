@@ -18,6 +18,10 @@ export function Footer() {
             <span>{BRAND.reviews.stars} ★ {BRAND.reviews.source}</span>
             <span>·</span>
             <span>Free Estimates</span>
+            <span>·</span>
+            <span>
+              <a href="#award">Best of 2025 · BusinessRate</a>
+            </span>
           </div>
         </div>
         <div className="footer-col">
@@ -27,6 +31,7 @@ export function Footer() {
             <li><a href="#services">Capabilities</a></li>
             <li><a href="#process">Process</a></li>
             <li><a href="#studio">Craftsman</a></li>
+            <li><a href="#award">Recognition</a></li>
           </ul>
         </div>
         <div className="footer-col">
@@ -36,6 +41,7 @@ export function Footer() {
             <li><a href="#services">Carved &amp; Retaining Walls</a></li>
             <li><a href="#services">Pools &amp; Pool Decks</a></li>
             <li><a href="#services">Patios &amp; Outdoor Living</a></li>
+            <li><a href="#services">Carved Posts &amp; Railings</a></li>
           </ul>
         </div>
         <div className="footer-col">

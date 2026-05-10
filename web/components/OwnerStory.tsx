@@ -1,22 +1,49 @@
-import { OWNER } from '@/lib/content';
+'use client';
+
+import { useEffect, useRef } from 'react';
+import { OWNER, STUDIO_VIDEO } from '@/lib/content';
 
 export function OwnerStory() {
+  // Respect prefers-reduced-motion: if the user has set it, pause the
+  // walkthrough loop on mount so they see the poster frame only. We
+  // can't gate this in CSS alone — `animation-play-state` doesn't
+  // affect <video> playback.
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const apply = () => {
+      if (mq.matches) v.pause();
+      else v.play().catch(() => {/* autoplay may be blocked; that's fine */});
+    };
+    apply();
+    mq.addEventListener?.('change', apply);
+    return () => mq.removeEventListener?.('change', apply);
+  }, []);
+
   return (
     <section className="section" id="studio" style={{ background: 'var(--bg-2)' }}>
       <div className="container-x owner">
-        {/* TODO(Adam): when an actual on-site portrait of Adam (or
-            Adam + crew) is available, swap this placeholder for a
-            <Image src={OWNER.portrait} alt={OWNER.portraitAlt} ... />
-            block. The current OWNER.portrait field in content.ts
-            points at project 31, which is a patio shot, not a person. */}
-        <div className="owner-portrait owner-portrait-placeholder reveal-left">
-          <div className="owner-portrait-slot" aria-hidden="true">
-            <span className="kicker">Inset Photo</span>
-            <p>
-              of <em>Adam &amp; crew.</em>
-            </p>
-            <span className="kicker">On site · coming soon</span>
-          </div>
+        {/* Portrait slot now plays the A-frame walkthrough video —
+            ambient, muted, looping. Shows the carved-concrete "log"
+            railings and stamped steps in motion (stills don't reveal
+            the depth of the carving). When Adam delivers a real
+            on-site portrait of him + crew, we can split this into a
+            video + portrait pair, or swap back to a still. */}
+        <div className="owner-portrait reveal-left">
+          <video
+            ref={videoRef}
+            className="owner-portrait-video"
+            src={STUDIO_VIDEO.src}
+            poster={STUDIO_VIDEO.poster}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label={STUDIO_VIDEO.caption}
+          />
         </div>
         <div className="owner-text">
           <span className="eyebrow reveal">The Studio</span>

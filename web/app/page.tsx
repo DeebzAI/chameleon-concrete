@@ -10,6 +10,7 @@ import { BeforeAfter } from '@/components/BeforeAfter';
 import { OwnerStory } from '@/components/OwnerStory';
 import { Process } from '@/components/Process';
 import { Testimonials } from '@/components/Testimonials';
+import { Award } from '@/components/Award';
 import { FinalCTA } from '@/components/FinalCTA';
 import { Footer } from '@/components/Footer';
 import { StickyCTA } from '@/components/StickyCTA';
@@ -47,6 +48,7 @@ export default function Home() {
         <OwnerStory />
         <Process />
         <Testimonials />
+        <Award />
         <FinalCTA />
       </main>
       <Footer />
