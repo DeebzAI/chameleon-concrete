@@ -164,6 +164,21 @@ export function GalleryModal({ open, onClose }: Props) {
             </button>
           ))}
         </div>
+
+        {/* Mirror the header close button at the bottom so visitors who
+            scrolled through the full archive can exit without scrolling
+            all the way back up. Reuses the .gallery-close styling. */}
+        <footer className="gallery-modal__foot">
+          <button
+            type="button"
+            className="gallery-close"
+            onClick={onClose}
+            aria-label="Close gallery"
+          >
+            <span aria-hidden>←</span>
+            <span className="gallery-close__label">Back to Site</span>
+          </button>
+        </footer>
       </div>
 
       {lightboxItem && lightboxIdx !== null && (

@@ -43,8 +43,8 @@ export default function Home() {
         <TrustStrip />
         <FeaturedWork />
         <Marquee />
-        <Services />
         <BeforeAfter />
+        <Services />
         <OwnerStory />
         <Process />
         <Testimonials />

@@ -70,7 +70,7 @@ export type Project = {
  * Layout intent (5 cards, three rows):
  *   Row 1 — col-12 wide opener (id 1 / image 38, atmospheric night patio)
  *   Row 2 — three col-4 portraits, tight → atmospheric → atmospheric:
- *     • id 20 / image 51 — compass medallion w/ teal lettering (craft detail)
+ *     • id 22 / image 53 — A-frame patio detail blending into rock
  *     • id 8  / image 41 — cliff waterfall grotto (kept from prior set)
  *     • id 18 / image 49 — stamped steps through woods (atmospheric scene)
  *   Row 3 — col-12 wide closer (id 16 / image 47 — drone over copper
@@ -79,9 +79,12 @@ export type Project = {
  * May 2026 reshuffle: prior portraits id 3 (stump chair) and id 4
  * (signature firepit) were moved off the homepage at Adam's request —
  * they remain in the full gallery. Prior closer id 6 (compass medallion
- * patio) likewise still lives in the gallery only.
+ * patio) likewise still lives in the gallery only. Prior portrait id 20
+ * (cardinal compass medallion) was rotated out to avoid theme overlap
+ * with id 16 (the drone-over-medallion closer below) — replaced with
+ * id 22, which also reinforces the A-frame walkthrough story.
  */
-export const FEATURED_PROJECT_IDS: readonly number[] = [1, 20, 8, 18, 16];
+export const FEATURED_PROJECT_IDS: readonly number[] = [1, 22, 8, 18, 16];
 
 // PROJECTS holds full metadata (title, tag, location) for any project
 // that needs richer presentation. Items render in array order wherever
@@ -231,13 +234,16 @@ export const PROJECTS: Project[] = [
 //
 // Numbers omitted are intentionally excluded:
 //   • 5, 11        — don't exist on disk
-//   • 42           — hero
+//   • 42           — hero (byte-identical to gallery opener 38; 42 is
+//                    reserved for the hero usage only)
 //   • 31           — owner portrait
 //   • 15, 16       — before/after pair
 //   • 39           — final CTA
 //   • 46           — brand "C" logo placeholder, not a project photo
 //   • 32, 37       — exact duplicates of 30 (signature firepit)
-//   • 27           — near-duplicate of 26 (slate walkway by door)
+//   • 26, 27       — exact byte-for-byte duplicates of 25 (slate
+//                    walkway by white door). All three have identical
+//                    MD5s — keep 25 only.
 //   • 20           — near-duplicate of 19 (raised house deck)
 //   • 29           — near-duplicate of 28 (in-progress driveway)
 //
@@ -256,7 +262,7 @@ const _galleryOrder: number[] = [
   // (drone, checkered patio mid-install) and 51 (compass medallion
   // with teal letters) slot in here; 52 + 53 are the A-frame still
   // pair that complement the OwnerStory walkthrough video.
-  48, 51, 52, 35, 36, 21, 17, 18, 2, 53, 22, 14, 12, 13, 25, 26,
+  48, 51, 52, 35, 36, 21, 17, 18, 2, 53, 22, 14, 12, 13, 25,
   // Tier 3 — competent finished work; less editorial pop. 54
   // (wood-plank side walkway) and 55 (copper edge detail) live here.
   6, 8, 9, 19, 23, 54, 55,

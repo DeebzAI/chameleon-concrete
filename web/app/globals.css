@@ -781,6 +781,27 @@ a { color: inherit; text-decoration: none; }
    differentiator at the end of the list. Only applies in the 2-col
    desktop layout; the mobile breakpoint already collapses to 1-col. */
 .service:last-child:nth-child(odd) { grid-column: 1 / -1; }
+/* Inside that full-width card, lay the title and body out in two
+   columns so the right half doesn't read as empty. Echoes the
+   section-header pattern (title left / lede right) used at the top
+   of the section. Desktop-only; mobile keeps the default flex stack. */
+@media (min-width: 961px) {
+  .service:last-child:nth-child(odd) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: clamp(28px, 3vw, 48px);
+    row-gap: 18px;
+    align-items: start;
+  }
+  .service:last-child:nth-child(odd) > h3 { grid-column: 1; grid-row: 1; }
+  .service:last-child:nth-child(odd) > p  { grid-column: 2; grid-row: 1; }
+  .service:last-child:nth-child(odd) > .arrow {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: end;
+    margin-top: 0;
+  }
+}
 .service::before {
   content: "";
   position: absolute; left: 0; top: 0;
@@ -1583,6 +1604,22 @@ a { color: inherit; text-decoration: none; }
 .gallery-close:hover {
   border-color: var(--sandstone);
   color: var(--sandstone);
+}
+
+/* Footer "Back to Site" button — visual twin of the header close, but
+   centered and sitting on a top divider so it reads as the natural
+   end-of-archive escape hatch after a long scroll. */
+.gallery-modal__foot {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(40px, 5vw, 72px);
+  padding-top: clamp(24px, 3vw, 36px);
+  border-top: 1px solid var(--line);
+}
+.gallery-modal__foot .gallery-close .gallery-close__label {
+  /* Footer button is the primary exit at this point — keep the label
+     visible even on narrow viewports where the header label hides. */
+  display: inline;
 }
 
 /* CSS-columns masonry. Every photo displays at its natural aspect
