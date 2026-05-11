@@ -64,7 +64,7 @@ export function Hero({
       <div className="hero-meta">
         <div className="hero-meta-block">
           <span className="num">{BRAND.name}</span>
-          Custom carved &amp; decorative concrete — water features, grottos, walls &amp; pools
+          Custom carved &amp; decorative concrete · water features, grottos, walls &amp; pools
         </div>
         <div className="hero-meta-block" style={{ textAlign: 'right' }}>
           <span className="num">{BRAND.city}</span>
@@ -93,7 +93,7 @@ export function Hero({
 
         <div className="hero-sub reveal" style={{ ['--rd' as string]: '260ms' }}>
           <p>
-            Custom carved and decorative concrete for outdoor spaces — water
+            Custom carved and decorative concrete for outdoor spaces. Water
             features, grottos, patios, pools and walls. Designed and carved on
             site by Adam and crew. No two projects alike.
           </p>

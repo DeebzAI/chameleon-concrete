@@ -38,7 +38,7 @@ export function FinalCTA() {
           className="lede reveal"
           style={{ ['--rd' as string]: '240ms', textAlign: 'center', margin: '0 auto' }}
         >
-          Call or text Adam directly. He answers personally — no forms,
+          Call or text Adam directly. He answers personally. No forms,
           no inbox, no middlemen. Most days he&apos;ll pick up; if he&apos;s
           on site he&apos;ll get back same day.
         </p>

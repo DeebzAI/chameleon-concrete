@@ -47,7 +47,7 @@ export function FeaturedWork() {
       <div className="container-x">
         <div className="sect-head">
           <div className="left">
-            <span className="eyebrow reveal">Selected Work · 2018 — 2026</span>
+            <span className="eyebrow reveal">Selected Work · 2018 to 2026</span>
             <h2 className="display h-lg reveal" style={{ ['--rd' as string]: '120ms' }}>
               Each environment, <em>singular.</em>
             </h2>
@@ -55,7 +55,7 @@ export function FeaturedWork() {
           <div className="right reveal" style={{ ['--rd' as string]: '240ms' }}>
             <p className="lede">
               A working archive of carved water features, sculpted walls,
-              poured pools and stamped patios — every piece designed and
+              poured pools and stamped patios. Every piece designed and
               hand-finished on site by Adam and crew.
             </p>
             <a href="#contact" className="lnk">

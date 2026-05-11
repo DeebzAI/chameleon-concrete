@@ -124,7 +124,7 @@ export function Testimonials() {
           <div className="right reveal" style={{ ['--rd' as string]: '240ms' }}>
             <p className="lede">
               {total} verified Google reviews across our portfolio. Drag
-              or swipe to read at your own pace — or let it cycle.
+              or swipe to read at your own pace, or let it cycle.
             </p>
           </div>
         </div>

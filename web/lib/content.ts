@@ -18,7 +18,7 @@ export const BRAND = {
   region: '& surrounding New England',
   // NOTE: The 916 area code is California. Confirm with Adam — could be
   // a personal cell from before he relocated, or a typo.
-  phone: '(916) 215 — 6482',
+  phone: '(916) 215-6482',
   phoneTel: '9162156482',
   // Email removed by design — Adam handles inquiries by call or text
   // only. Don't add a `mailto:` anywhere on the site.
@@ -295,15 +295,15 @@ export const GALLERY: GalleryItem[] = _galleryOrder.map((n) => {
 // previously.
 export const SERVICES = [
   { title: 'Water Features & Grottos',
-    body: 'Sculpted concrete water features and custom grottos — carved on site to look natural, permanent, and built into the land.' },
+    body: 'Custom water features and grottos, sculpted on site so they look like they grew out of the ground, not dropped on top of it.' },
   { title: 'Pools & Pool Decks',
-    body: 'Custom-designed concrete pools and pool decking — including blending new work seamlessly with existing decking and surrounds.' },
+    body: 'Concrete pools and pool decking. New work matched to whatever decking and stone you already have, so the join disappears.' },
   { title: 'Carved & Retaining Walls',
-    body: 'Artisan-carved accent walls, decorative walls, and structural retaining walls — sculpted into the landscape rather than placed on top of it.' },
+    body: 'Hand-carved accent walls, decorative walls and structural retaining walls. Built into the slope, not stacked on top of it.' },
   { title: 'Patios & Outdoor Living',
-    body: 'Concrete patios, walkways and outdoor living features — including stamped and decorative finishes, fire pits and the signature carved tree-stump pizza oven.' },
+    body: 'Concrete patios, walkways and outdoor living. Stamped and decorative finishes, fire pits, and the signature carved tree-stump pizza oven.' },
   { title: 'Carved Posts & Railings',
-    body: 'Concrete carved to the texture and presence of weathered logs and tree branches — railings, balusters and site posts that read as found objects, not installed product.' },
+    body: 'Railings, balusters and site posts carved from concrete to look like weathered logs and branches. Most people don\'t realize they aren\'t wood.' },
 ];
 
 export const PROCESS = [
@@ -312,7 +312,7 @@ export const PROCESS = [
   { title: 'Concept & Estimate',
     body: 'Concept sketch, materials direction and a free, no-obligation estimate. Scope and timeline locked before any work begins.' },
   { title: 'Form, Pour & Carve',
-    body: 'Prep, forming, pour and the signature hand-carving phase — texture, stone faces and detail sculpted directly into the wet concrete.' },
+    body: 'Prep, forming, pour, then the signature hand-carving phase. Texture, stone faces and detail are sculpted directly into the wet concrete.' },
   { title: 'Color & Finish',
     body: 'Coloring, sealing and final walkthrough. The finished feature blends with existing decking, plantings and surrounds.' },
 ];
@@ -320,7 +320,7 @@ export const PROCESS = [
 export const OWNER = {
   headline: 'Adam & crew. Concrete as a craft.',
   quote: 'We build concrete that feels natural, permanent, and completely custom to the space.',
-  bio: 'Chameleon Concrete Projects is led by Adam Samarco out of Franklin, Massachusetts. Adam is known by clients for creativity, deep concrete knowledge, and an eye for blending new carved work into existing decking and landscape — so what we add looks like it was always there. Every project is run by Adam and the same crew, start to finish.',
+  bio: 'Chameleon Concrete Projects is led by Adam Samarco out of Franklin, Massachusetts. Clients hire Adam for his creativity, his depth of concrete knowledge, and the way he can blend new carved work into existing decking and landscape so it looks like it was always there. Every project is run by Adam and the same crew, start to finish.',
   portrait: img('/images/chameleon_concrete_31.jpg'),
   portraitAlt: 'Adam Samarco, owner of Chameleon Concrete Projects, on site',
 };
@@ -336,7 +336,7 @@ export const TESTIMONIALS = [
     name: 'Google Review', loc: 'Franklin area', project: 'Patio' },
   { quote: 'Very creative and the job was done perfectly. We will absolutely use Chameleon again for the next phase of our yard.',
     name: 'Google Review', loc: 'New England', project: 'Outdoor Project' },
-  { quote: '5.0 stars across 18 Google reviews — clients consistently mention creativity, concrete knowledge, professionalism and the way new work blends into older decking.',
+  { quote: '5.0 stars across 18 Google reviews. The same themes come up over and over: creativity, concrete knowledge, professionalism, and the way new work blends into older decking.',
     name: 'Verified · Google', loc: 'Aggregate', project: 'Across projects' },
 
   // — placeholder reviews matching the same anonymous tone (pending Adam's real ones) —
@@ -352,9 +352,9 @@ export const TESTIMONIALS = [
     name: 'Google Review', loc: 'Sherborn, MA', project: 'Multi-piece Project' },
   { quote: "The wood-grain walkway is unbelievable. Visitors knock on it to make sure it's not real wood.",
     name: 'Google Review', loc: 'Medfield, MA', project: 'Stamped Walkway' },
-  { quote: 'Second project with Chameleon. First was a patio in 2021 — we just had them back to add a carved wall and outdoor kitchen surround. Same crew, same care.',
+  { quote: 'Second project with Chameleon. First was a patio in 2021. We just had them back to add a carved wall and outdoor kitchen surround. Same crew, same care.',
     name: 'Google Review', loc: 'Hopkinton, MA', project: 'Repeat Client · Wall & Kitchen' },
-  { quote: "I'm a contractor. I've worked with a lot of decorative concrete crews. Adam's level of carving and color is a different category — closer to sculpture than concrete work.",
+  { quote: "I'm a contractor. I've worked with a lot of decorative concrete crews. Adam's level of carving and color is a different category. Closer to sculpture than concrete work.",
     name: 'Google Review', loc: 'Massachusetts', project: 'Trade Reference' },
   { quote: "We didn't want anything that looked like a stamp pattern repeated 50 times. Adam carved every panel by hand. No two stones in the wall match.",
     name: 'Google Review', loc: 'Walpole, MA', project: 'Carved Wall' },
@@ -399,7 +399,7 @@ export const BA_IMAGES = {
 
 export const CTA_IMAGE = {
   src: img('/images/chameleon_concrete_39.jpg'),
-  alt: 'Moody night waterfall — custom carved concrete grotto detail',
+  alt: 'Moody night waterfall, custom carved concrete grotto detail',
 };
 
 // ── Award (May 2026) ─────────────────────────────────────────────
@@ -409,7 +409,7 @@ export const CTA_IMAGE = {
 // referenced in TrustStrip + Footer.
 export const AWARD = {
   src: img('/images/award_businessrate_2025.png'),
-  alt: 'Best of BusinessRate 2025 — Concrete Contractor, Franklin Massachusetts plaque awarded to Chameleon Concrete Projects',
+  alt: 'Best of BusinessRate 2025, Concrete Contractor, Franklin Massachusetts plaque awarded to Chameleon Concrete Projects',
   eyebrow: 'Recognition',
   headline: 'Voted Best of <em>2025.</em>',
   body:

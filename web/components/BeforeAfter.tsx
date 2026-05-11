@@ -105,7 +105,7 @@ export function BeforeAfter() {
           style={{ ['--ba-pos' as string]: `${pos}%` }}
           role="slider"
           tabIndex={0}
-          aria-label="Before / after comparison — drag or use arrow keys"
+          aria-label="Before / after comparison. Drag or use arrow keys."
           aria-valuemin={0}
           aria-valuemax={100}
           aria-valuenow={Math.round(pos)}

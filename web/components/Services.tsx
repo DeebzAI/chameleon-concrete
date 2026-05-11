@@ -33,7 +33,6 @@ export function Services() {
             </span>
             <h3>{s.title}</h3>
             <p>{s.body}</p>
-            <span className="arrow" aria-hidden>↗</span>
           </div>
         ))}
       </div>

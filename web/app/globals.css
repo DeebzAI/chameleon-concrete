@@ -795,12 +795,6 @@ a { color: inherit; text-decoration: none; }
   }
   .service:last-child:nth-child(odd) > h3 { grid-column: 1; grid-row: 1; }
   .service:last-child:nth-child(odd) > p  { grid-column: 2; grid-row: 1; }
-  .service:last-child:nth-child(odd) > .arrow {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    justify-self: end;
-    margin-top: 0;
-  }
 }
 .service::before {
   content: "";
@@ -835,19 +829,6 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.6;
   max-width: 52ch;
 }
-.service .arrow {
-  margin-top: auto;
-  padding-top: 24px;
-  align-self: flex-end;
-  font-family: var(--font-fraunces), serif;
-  font-style: italic;
-  font-size: 28px;
-  color: var(--sandstone);
-  display: inline-block;
-  transition: transform 280ms cubic-bezier(.2,.8,.2,1);
-}
-.service:hover .arrow { transform: translate(8px, -8px); }
-
 /* ── Before / After ─────────────────────────────────────────── */
 .ba-wrap {
   position: relative;

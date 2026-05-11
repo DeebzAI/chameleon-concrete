@@ -13,7 +13,7 @@ export function Process() {
           </div>
           <div className="right reveal" style={{ ['--rd' as string]: '240ms' }}>
             <p className="lede">
-              Four phases, one crew. Most residential projects run 8–14 weeks
+              Four phases, one crew. Most residential projects run 8 to 14 weeks
               from first walk to final reveal.
             </p>
           </div>

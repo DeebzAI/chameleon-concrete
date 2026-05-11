@@ -10,7 +10,7 @@ export function Footer() {
             <em style={{ color: 'var(--sandstone)', fontStyle: 'italic' }}>.</em>
           </div>
           <p>
-            Custom carved and decorative concrete — water features, grottos,
+            Custom carved and decorative concrete. Water features, grottos,
             patios, pools and walls. Based in {BRAND.city}, serving Franklin
             and surrounding New England communities.
           </p>

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   ),
   title: 'Chameleon Concrete Projects · Custom Carved & Decorative Concrete',
   description:
-    'Custom carved and decorative concrete for outdoor spaces — water features, grottos, patios, pools and walls. Designed and carved on site in Franklin, MA by Adam Samarco and crew.',
+    'Custom carved and decorative concrete for outdoor spaces. Water features, grottos, patios, pools and walls, designed and carved on site in Franklin, MA by Adam Samarco and crew.',
   keywords: [
     'custom concrete', 'carved concrete', 'decorative concrete',
     'concrete water feature', 'concrete grotto', 'concrete pool',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Chameleon Concrete Projects · Custom Carved Concrete',
     description:
-      'Sculpted concrete water features, grottos, pools and walls — carved on site by Adam Samarco. Franklin, MA & surrounding New England.',
+      'Sculpted concrete water features, grottos, pools and walls. Carved on site by Adam Samarco. Franklin, MA & surrounding New England.',
     siteName: BRAND.name,
     locale: 'en_US',
     images: [{ url: '/images/chameleon_concrete_42.jpg', width: 1600, height: 900,
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Chameleon Concrete Projects',
-    description: 'Sculpted concrete environments — carved by hand in Franklin, MA.',
+    description: 'Sculpted concrete environments, carved by hand in Franklin, MA.',
     images: ['/images/chameleon_concrete_42.jpg'],
   },
   robots: { index: true, follow: true },
